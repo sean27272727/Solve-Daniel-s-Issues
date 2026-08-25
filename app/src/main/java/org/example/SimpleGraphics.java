@@ -1,5 +1,9 @@
 package org.example;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -7,10 +11,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * SimpleGraphics
@@ -218,4 +218,30 @@ public class SimpleGraphics extends Application {
         }
         return c;
     }
+    /**
+
+AI Attribution: Generated with ChatGPT.
+
+Prompt: "i want to draw the head. the parameter should be the head centered at x,y"
+*/
+public static void drawHead(double x, double y) {
+double width = 200;
+double height = 100;
+
+// Head
+gc.strokeRect(x - width / 2, y - height / 2, width, height);
+
+// Eyes
+gc.strokeOval(x - 32, y - 35, 20, 20);
+gc.strokeOval(x + 12, y - 35, 20, 20);
+
+// Mouth
+gc.strokeRect(x - 25, y + 5, 20, 12);
+
+// Antenna
+gc.strokeLine(x, y - height / 2, x, y - height / 2 - 25);
+gc.strokeLine(x, y - height / 2 - 25, x + 25, y - height / 2 - 25);
+gc.strokeOval(x + 20, y - height / 2 - 30, 10, 10);
+}
+
 }
