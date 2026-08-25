@@ -268,5 +268,87 @@ y + 30, y + 55, y + 10, y - 15, y - 20
 
 gc.strokePolygon(starX, starY, 10);
 }
+/**
+
+AI Attribution: Generated with ChatGPT.
+
+Prompt: "add hands"
+*/
+public static void drawArm(double x, double y, boolean z) {
+double armLength = 100;
+double armWidth = 20;
+double bendLength = 60;
+double handRadius = 12;
+double direction = z ? 1 : -1;
+
+double elbowX = x + direction * armLength;
+double handX = elbowX + direction * bendLength;
+
+gc.strokePolygon(
+new double[]{
+x, x,
+elbowX, elbowX,
+handX, handX,
+elbowX + direction * armWidth, elbowX + direction * armWidth,
+x + direction * armWidth, x + direction * armWidth
+},
+new double[]{
+y - armWidth / 2, y + armWidth / 2,
+y + armWidth / 2, y + armWidth / 2 + 60,
+y + armWidth / 2 + 60, y - armWidth / 2 + 60,
+y - armWidth / 2 + 60, y - armWidth / 2,
+y - armWidth / 2, y + armWidth / 2
+},
+10
+);
+
+gc.strokeOval(
+handX - handRadius,
+y + 60 - handRadius,
+handRadius * 2,
+handRadius * 2
+);
+}
+/**
+ * AI Attribution: Generated with ChatGPT.
+ * Prompt: "ok now make code for the legs with the exact same function and parameters as arms but just looking like legs"
+ */
+public static void drawLeg(double x, double y, boolean z) {
+    double legLength = 100;
+    double legWidth = 20;
+    double footLength = 35;
+    double direction = z ? 1 : -1;
+
+    double kneeX = x + direction * 30;
+    double footX = kneeX + direction * 20;
+
+    gc.strokePolygon(
+        new double[]{
+            x - legWidth / 2, x + legWidth / 2,
+            kneeX + legWidth / 2, kneeX - legWidth / 2
+        },
+        new double[]{
+            y, y,
+            y + legLength, y + legLength
+        },
+        4
+    );
+
+    gc.strokePolygon(
+        new double[]{
+            kneeX - legWidth / 2, kneeX + legWidth / 2,
+            footX + direction * footLength, footX + direction * footLength,
+            footX + direction * footLength, footX
+        },
+        new double[]{
+            y + legLength, y + legLength,
+            y + legLength, y + legLength + legWidth,
+            y + legLength + legWidth * 2, y + legLength + legWidth * 2
+        },
+        6
+    );
+}
+
+
 
 }

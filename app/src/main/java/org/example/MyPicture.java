@@ -18,10 +18,15 @@ public class MyPicture {
         SimpleGraphics.setLineThickness(5);
         SimpleGraphics.drawHead(300.0, 200.0);
         SimpleGraphics.drawBody(300, 340);
+        SimpleGraphics.drawArm(400, 300, true);
+        SimpleGraphics.drawArm(200, 300, false);
+        SimpleGraphics.drawLeg(350,430,true);
+        SimpleGraphics.drawLeg(250,430,false);
     }
 
     public static void main(String[] args) {
         // Launch the window; only edit the starting canvas dimensions if you'd like to.
         SimpleGraphics.start(MyPicture::drawPicture, 600, 800);
     }
+
 }
