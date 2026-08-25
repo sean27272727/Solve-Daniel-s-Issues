@@ -243,5 +243,30 @@ gc.strokeLine(x, y - height / 2, x, y - height / 2 - 25);
 gc.strokeLine(x, y - height / 2 - 25, x + 25, y - height / 2 - 25);
 gc.strokeOval(x + 20, y - height / 2 - 30, 10, 10);
 }
+/**
+
+AI Attribution: Generated with ChatGPT.
+
+Prompt: "now make function for body"
+*/
+public static void drawBody(double x, double y) {
+double width = 200;
+double height = 180;
+
+// Body
+gc.strokeRect(x - width / 2, y - height / 2, width, height);
+
+// Star
+double[] starX = {
+x, x + 15, x + 60, x + 25, x + 40,
+x, x - 40, x - 25, x - 60, x - 15
+};
+double[] starY = {
+y - 65, y - 20, y - 15, y + 10, y + 55,
+y + 30, y + 55, y + 10, y - 15, y - 20
+};
+
+gc.strokePolygon(starX, starY, 10);
+}
 
 }

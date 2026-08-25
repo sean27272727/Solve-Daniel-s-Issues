@@ -17,6 +17,7 @@ public class MyPicture {
         SimpleGraphics.fillBackground("white");
         SimpleGraphics.setLineThickness(5);
         SimpleGraphics.drawHead(300.0, 200.0);
+        SimpleGraphics.drawBody(300, 340);
     }
 
     public static void main(String[] args) {
