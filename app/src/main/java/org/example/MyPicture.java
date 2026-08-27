@@ -16,8 +16,8 @@ public class MyPicture {
         // Fill the background
         SimpleGraphics.fillBackground("white");
         SimpleGraphics.setLineThickness(5);
-        SimpleGraphics.drawHead(300.0, 200.0);
-        SimpleGraphics.drawBody(300, 340);
+        SimpleGraphics.drawHead(300.0, 200.0, "#FF10F0", "green");
+        SimpleGraphics.drawBody(300, 340, "#FFFF00");
         SimpleGraphics.drawArm(400, 300, true);
         SimpleGraphics.drawArm(200, 300, false);
         SimpleGraphics.drawLeg(350,430,true);

@@ -224,12 +224,13 @@ AI Attribution: Generated with ChatGPT.
 
 Prompt: "i want to draw the head. the parameter should be the head centered at x,y"
 */
-public static void drawHead(double x, double y) {
+public static void drawHead(double x, double y, String headColor, String antennaColor) {
 double width = 200;
 double height = 100;
 
 // Head
-gc.strokeRect(x - width / 2, y - height / 2, width, height);
+gc.setFill(toColor(headColor));
+gc.fillRect(x - width / 2, y - height / 2, width, height);
 
 // Eyes
 gc.strokeOval(x - 32, y - 35, 20, 20);
@@ -239,9 +240,10 @@ gc.strokeOval(x + 12, y - 35, 20, 20);
 gc.strokeRect(x - 25, y + 5, 20, 12);
 
 // Antenna
+gc.setFill(toColor(antennaColor));
 gc.strokeLine(x, y - height / 2, x, y - height / 2 - 25);
 gc.strokeLine(x, y - height / 2 - 25, x + 25, y - height / 2 - 25);
-gc.strokeOval(x + 20, y - height / 2 - 30, 10, 10);
+gc.fillOval(x + 20, y - height / 2 - 30, 10, 10);
 }
 /**
 
@@ -249,7 +251,7 @@ AI Attribution: Generated with ChatGPT.
 
 Prompt: "now make function for body"
 */
-public static void drawBody(double x, double y) {
+public static void drawBody(double x, double y, String starColor) {
 double width = 200;
 double height = 180;
 
@@ -257,6 +259,7 @@ double height = 180;
 gc.strokeRect(x - width / 2, y - height / 2, width, height);
 
 // Star
+gc.setFill(toColor(starColor));
 double[] starX = {
 x, x + 15, x + 60, x + 25, x + 40,
 x, x - 40, x - 25, x - 60, x - 15
@@ -266,7 +269,7 @@ y - 65, y - 20, y - 15, y + 10, y + 55,
 y + 30, y + 55, y + 10, y - 15, y - 20
 };
 
-gc.strokePolygon(starX, starY, 10);
+gc.fillPolygon(starX, starY, 10);
 }
 /**
 
